@@ -399,10 +399,8 @@ def line_login():
             userID = content["userId"]
             pictureURL = content["pictureUrl"]
             print(content)
-            statusMessage = content["statusMessage"]
             return render_template('profile.html', name=name, pictureURL=
-                                   pictureURL, userID=userID, statusMessage=
-                                   statusMessage)
+                                   pictureURL, userID=userID)
         else:
             return render_template('login.html', client_id=client_id,
                                    end_point=end_point)
