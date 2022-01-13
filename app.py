@@ -120,11 +120,9 @@ def index():
                 replyMessage(payload)
             else:
                 data = json.loads(events[0]["postback"]["data"])
-                print(data)
                 action = data["action"]
-                if action == "get_near":
-                    data["action"] = "get_detail"
-                    payload["messages"] = [getCarouselMessage(data)]
+                if action == "deny":
+                    payload["messages"] = ['感謝你的使用']
                 elif action == "get_detail":
                     del data["action"]
                     payload["messages"] = [getTaipei101ImageMessage(),
@@ -222,7 +220,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
     message = dict()
     message["type"] = "template"
     message["altText"] = "this is a confirm template"
-    data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "get_near"}
+    data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "deny"}
     message["template"] = {
           "type": "confirm",
           "text": F"您是否確定搜尋{title}附近景點？",
