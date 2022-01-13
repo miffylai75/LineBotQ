@@ -120,6 +120,7 @@ def index():
                 replyMessage(payload)
             else:
                 data = json.loads(events[0]["postback"]["data"])
+                print(data)
                 action = data["action"]
                 if action == "get_near":
                     data["action"] = "get_detail"
@@ -233,8 +234,9 @@ def getLocationConfirmMessage(title, latitude, longitude):
                        "text": "是"
                       },
                     {
-                        "type": "message",
+                        "type": "postback",
                         "label": "否",
+                        "data" : json.dumps(data)
                         "text": "否"
                       }
           ]
