@@ -398,8 +398,8 @@ def line_login():
             name = content["displayName"]
             userID = content["userId"]
             pictureURL = content["pictureUrl"]
-            statusMessage = content["statusMessage"]
             print(content)
+            statusMessage = content["statusMessage"]
             return render_template('profile.html', name=name, pictureURL=
                                    pictureURL, userID=userID, statusMessage=
                                    statusMessage)
