@@ -122,7 +122,10 @@ def index():
                 data = json.loads(events[0]["postback"]["data"])
                 action = data["action"]
                 if action == "deny":
-                    payload["messages"] = ['感謝你的使用']
+                    payload["messages"] = [   {
+                                "type": "text",
+                                "text": 感謝你的使用
+                            }]
                 elif action == "get_detail":
                     del data["action"]
                     payload["messages"] = [getTaipei101ImageMessage(),
