@@ -197,7 +197,7 @@ def getCarouselMessage(data):
           "type": "image_carousel",
           "columns": [
                {
-                "imageUrl": F"{end_point}/static/taipei_101.jpeg",
+                "imageUrl": "https://egoldenyears.com/wp-content/uploads/2018/10/20181011_a0115.jpg",
                 "action": {
                   "type": "postback",
                   "label": "台北101",
