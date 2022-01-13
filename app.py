@@ -226,7 +226,8 @@ def getLocationConfirmMessage(title, latitude, longitude):
     message = dict()
     message["type"] = "template"
     message["altText"] = "this is a confirm template"
-    data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "deny","action":"get_near"}
+    data1 = {"title": title, "latitude": latitude, "longitude": longitude, "action": "get_near"}
+    data2 = {"title": title, "latitude": latitude, "longitude": longitude, "action": "deny"}
     message["template"] = {
           "type": "confirm",
           "text": F"您是否確定搜尋{title}附近景點？",
@@ -234,13 +235,13 @@ def getLocationConfirmMessage(title, latitude, longitude):
                     {
                        "type": "postback",
                        "label": "是",
-                       "data": json.dumps(data),
+                       "data": json.dumps(data1),
                        "text": "是"
                       },
                     {
                         "type": "postback",
                         "label": "否",
-                        "data" : json.dumps(data),
+                        "data" : json.dumps(data2),
                         "text": "否"
                       }
           ]
