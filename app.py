@@ -196,7 +196,22 @@ def getCarouselMessage(data):
     message["template"] = {
           "type": "image_carousel",
           "columns": [
-
+               {
+                "imageUrl": F"{end_point}/static/taipei_101.jpeg",
+                "action": {
+                  "type": "postback",
+                  "label": "台北101",
+                  "data": json.dumps(data)
+                }
+              },
+              {
+                "imageUrl": F"{end_point}/static/taipei_1.jpeg",
+                "action": {
+                  "type": "postback",
+                  "label": "台北101",
+                  "data": json.dumps(data)
+                }
+              }
           ]
     }
     return message
