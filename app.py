@@ -126,6 +126,9 @@ def index():
                                 "type": "text",
                                 "text": "感謝你的使用"
                             }]
+                elif action == "get_near":
+                    data["action"] = "get_detail"
+                    payload["messages"] = [getCarouselMessage(data)]    
                 elif action == "get_detail":
                     del data["action"]
                     payload["messages"] = [getTaipei101ImageMessage(),
@@ -223,7 +226,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
     message = dict()
     message["type"] = "template"
     message["altText"] = "this is a confirm template"
-    data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "deny"}
+    data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "deny","action":"get_near"}
     message["template"] = {
           "type": "confirm",
           "text": F"您是否確定搜尋{title}附近景點？",
