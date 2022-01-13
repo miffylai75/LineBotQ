@@ -256,7 +256,6 @@ def getMRTSoundMessage():
 
 
 def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
-    
     return getImageMessage(originalContentUrl)
 
 
