@@ -124,7 +124,7 @@ def index():
                 if action == "deny":
                     payload["messages"] = [   {
                                 "type": "text",
-                                "text": 感謝你的使用
+                                "text": "感謝你的使用"
                             }]
                 elif action == "get_detail":
                     del data["action"]
